@@ -7,25 +7,24 @@
     <br>
     <label for="">Masukan No 3</label>
     <input type="number" name="bil3" >
-    <input type="submit" name="hasil">
+    <input type="submit" name="submit">
 
 </form>
 
 <?php
 
-if($_POST){
+if(isset($_POST['submit'])){
     $bil1 =$_POST['bil1'];
     $bil2 =$_POST['bil2'];
     $bil3 =$_POST['bil3'];
-        if($bil1 > $bil2 && $bil1 >$bil3){
-            echo "bilangan terbesar adalah bilangan 1 yaitu = " . $bil1;
-        }
-        elseif($bil2 > $bil1 && $bil2 >$bil3){
-            echo "bilangan terbesar adalah bilangan 2 yaitu =  " . $bil2;
-        }else{
-            echo "bilangan terbesar adalah bilangan 3 yaitu = " .$bil3;
-        }
 
+    $terbesar = max($bil1, $bil2, $bil3);
+
+    echo "Bilangan terbesar adalah " . $terbesar;
+
+    
 }
+
+
 
 ?>
